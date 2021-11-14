@@ -76,11 +76,8 @@ end;
 
 procedure TMathParser.CompileExpression(const AExpression: string);
 begin
-  if FExpression <> AExpression then
-  begin
-    FExpression := AExpression;
-    Compiler.Compile(FExpression);
-  end;
+  FExpression := AExpression;
+  Compiler.Compile(FExpression);
 end;
 
 procedure TMathParser.DefineVariable(const Name: string; const Value: Double);
