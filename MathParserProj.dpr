@@ -3,11 +3,12 @@ program MathParserProj;
 uses
   Vcl.Forms,
   Main in 'Main.pas' {FormMain},
-  MathCompiller in 'MathCompiller.pas',
+  MathParser.Compiler in 'MathParser.Compiler.pas',
   Vcl.Themes,
   Vcl.Styles,
-  MathVirtualMachine in 'MathVirtualMachine.pas',
-  MathParser in 'MathParser.pas';
+  MathParser.VirtualMachine in 'MathParser.VirtualMachine.pas',
+  MathParser.Parser in 'MathParser.Parser.pas',
+  MathParser.Types in 'MathParser.Types.pas';
 
 {$R *.res}
 

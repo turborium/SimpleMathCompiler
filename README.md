@@ -4,4 +4,4 @@
 
 тесты сломанафы
 
-![scr](scr.png)
+![scr](scr.gif)
