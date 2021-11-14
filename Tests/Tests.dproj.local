@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.257,C:\Users\crazzzypeter\Documents\Embarcadero\Studio\Projects\stream\SimpleMathParser\MathVM.pas=C:\Users\crazzzypeter\Documents\Embarcadero\Studio\Projects\stream\SimpleMathParser\MathVirtualMachine.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.589,=C:\Users\crazzzypeter\Documents\Embarcadero\Studio\Projects\stream\SimpleMathParser\MathVM.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,C:\Users\crazzzypeter\Documents\Embarcadero\Studio\Projects\stream\SimpleMathParser\MathParser.pas=C:\Users\crazzzypeter\Documents\Embarcadero\Studio\Projects\stream\SimpleMathParser\MathCompiller.pas</Transaction>
+  </Transactions>
+</BorlandProject>
