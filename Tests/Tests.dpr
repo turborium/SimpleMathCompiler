@@ -14,8 +14,10 @@ uses
   {$ENDIF }
   DUnitX.TestFramework,
   MathParserTest in 'MathParserTest.pas',
-  MathCompiller in '..\MathCompiller.pas',
-  MathVirtualMachine in '..\MathVirtualMachine.pas';
+  MathParser.Compiler in '..\MathParser.Compiler.pas',
+  MathParser.VirtualMachine in '..\MathParser.VirtualMachine.pas',
+  MathParser.Parser in '..\MathParser.Parser.pas',
+  MathParser.Types in '..\MathParser.Types.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

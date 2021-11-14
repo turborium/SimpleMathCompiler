@@ -3,7 +3,7 @@ unit MathParserTest;
 interface
 
 uses
-  DUnitX.TestFramework, MathParser, SysUtils, StrUtils;
+  DUnitX.TestFramework, MathParser.Parser, MathParser.Types, SysUtils, StrUtils;
 
 type
   [TestFixture]
@@ -62,7 +62,7 @@ implementation
 
 procedure TMathParserTest.Setup;
 begin
-  Parser := TMathParser.Create(nil);
+  Parser := TMathParser.Create();
 end;
 
 procedure TMathParserTest.TearDown;
@@ -72,7 +72,7 @@ end;
 
 procedure TMathParserTest.TestBase(const Expression: string; const Ans: Double);
 begin
-  Parser.Expression := Expression;
+  Parser.CompileExpression(Expression);
   Assert.AreEqual(Ans, Parser.Calculate);
 end;
 
@@ -80,11 +80,11 @@ procedure TMathParserTest.TestExceptions(const Expression: string; const ErrorPo
 var
   Visualize: string;
 begin
-  Parser.Expression := Expression;
   try
+    Parser.CompileExpression(Expression);
     Parser.Calculate;
   except
-    on E: EParserError do
+    on E: EMathCompillerError do
     begin
       Visualize := '"' + Parser.Expression + '_"' + #13;
       Visualize :=  Visualize + ' ' + DupeString(' ', E.Position) + '^';
@@ -93,6 +93,10 @@ begin
       Assert.AreEqual(ErrorPosionon, E.Position, {'Expected: ' + IntToStr(ErrorPosionon) +
          ', actual: ' + IntToStr(E.Position) + ', message: ' +} E.Message + #13 + visualize);
       Exit;
+    end;
+    on E: EVirtualMachineError do
+    begin
+      //Exit;// temp hack
     end;
   end;
   Assert.Fail('Error in "' + Expression + '" not found!');
